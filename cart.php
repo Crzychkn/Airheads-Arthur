@@ -1,8 +1,11 @@
 <?php include'header.php'?>
 
+<?php include'../../includes/connect.php'?>
+
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <?php include'navigation.php'?>
+
 
 <div class="container">
   <table id="cart" class="table table-hover table-condensed">
@@ -15,13 +18,17 @@
               <th style="width:10%"></th>
             </tr>
           </thead>
+
           <tbody>
+
+
             <tr>
               <td data-th="Product">
                 <div class="row">
-                  <div class="col-sm-2 hidden-xs"><img src="img/products/strawberry.jpg" alt="..." class="img-responsive"/></div>
+		<div class="col-sm-2 hidden-xs"><img src="" alt="..." class="img-responsive"/></div>
                   <div class="col-sm-10">
-                    <h4 class="nomargin">Strawberry</h4>
+                    <h4 class="nomargin"></h4>
+			
                     <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
                   </div>
                 </div>
@@ -36,7 +43,11 @@
                 <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>                
               </td>
             </tr>
+
+
           </tbody>
+
+	<!-- Sub Total Footer -->
           <tfoot>
             <tr class="visible-xs">
               <td class="text-center"><strong>Total $7.95</strong></td>

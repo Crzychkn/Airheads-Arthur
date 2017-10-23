@@ -1,3 +1,10 @@
+<?php 
+//Start the session! START IT!
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,8 +3,43 @@
 <?php include'../../includes/connect.php'?>
 
 <?php 
+  
+    if(isset($_GET['action']) && $_GET['action']=="add"){ 
+          
+        $id=intval($_GET['id']); 
+          
+        if(isset($_SESSION['cart'][$id])){ 
+              
+            $_SESSION['cart'][$id]['quantity']++; 
+              
+        }else{ 
+              
+            $sql_s="SELECT * FROM products WHERE id={$id}"; 
+            $query_s=mysqli_query($sql_s); 
+            if(mysqli_num_rows($query_s)!=0){ 
+                $row_s=mysqli_fetch_array($query_s); 
+                  
+                $_SESSION['cart'][$row_s['id']]=array( 
+                        "quantity" => 1, 
+                        "price" => $row_s['price'] 
+                    ); 
+                  
+                  
+            }else{ 
+                  
+                $message="This product id is invalid!"; 
+                  
+            } 
+              
+        } 
+          
+    } 
+  
+?>
 
-$query = "select name, image, price from products"; 
+<?php 
+
+$query = "select id, name, image, price from products"; 
 
 $result = mysqli_query($conn, $query);
 
@@ -38,7 +73,7 @@ while ($row = mysqli_fetch_array($result))
 			<p class="lead">$<?php echo $output['price']?></p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
+				<a class="btn btn-success" href="store.php?page=products&action=add&id=<?php echo $output['id'] ?>">Add to cart</a>
                         </div>
                     </div>
                 </div>
