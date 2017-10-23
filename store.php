@@ -15,6 +15,21 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+<?php include'../../includes/connect.php'?>
+
+<?php 
+
+$query = "select name, image, price from products"; 
+
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_array($result))
+{
+	$resultArr[] = $row;
+}
+
+?>
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -57,135 +72,33 @@
 
 
 <div class="container">
+
+<div id="products" class="row list-group">
+
+
+<?php foreach ($resultArr as $output) { ?>
+
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+	    <img class="group list-group-image" src="<?php echo $output['image']?>" alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading"><?php echo $output['name']?></h4>
+                    <p class="group inner list-group-item-text">
+                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+			<p class="lead">$<?php echo $output['price']?></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <a class="btn btn-success" href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<?php } ?>
     
-    
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/cherry.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                       Cherry</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/watermelon.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                       Watermelon</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/raspberry.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Raspberry</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/apple.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Apple</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                               $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/mystery.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Mystery</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                <img class="group list-group-image" src="img/products/strawberry.jpg" alt="" />
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        Strawberry</h4>
-                    <p class="group inner list-group-item-text">
-                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                                $7.95</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="#">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
