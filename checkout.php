@@ -15,8 +15,11 @@
                 <div class="col-xs-9">                      
                   <form role="form" class="">
                     <div class="form-group">
-                      <label for="inputname">Name</label>
-                      <input type="text" class="form-control form-control-large" id="inputname" placeholder="Enter name">
+                      <label for="inputname">First Name</label>
+                      <input type="text" class="form-control form-control-large" id="inputname" placeholder="First">
+                    </div><div class="form-group">
+                      <label for="inputname">Last Name</label>
+                      <input type="text" class="form-control form-control-large" id="inputname" placeholder="Last">
                     </div>
                     <div class="form-group">
                       <label for="inputAddress1">Street address 1</label>
