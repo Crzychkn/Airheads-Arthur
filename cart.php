@@ -21,13 +21,36 @@
 
           <tbody>
 
+<?php if (isset($_SESSION['cart'])): ?>
+
+	<?php $sql = "select * from products where id in (";?>
+
+	<?php echo "TEST"; ?>
+
+	<?php foreach ($_SESSION['cart'] as $id => $value): ?>
+
+		<?php $sql.=$id.",";?>		
+
+	<?php endforeach; ?>
+
+	<?php $sql = substr($sql, 0, -1).") order by name asc"; ?>
+
+	<?php $query = mysqli_query ($conn, $sql); ?>
+
+	<?php while ($row = mysqli_fetch_array($query)): ?>
+
+		<?php $cartArr[] = $row; ?>
+
+	<?php endwhile; ?>
+
+	<?php foreach ($cartArr as $output): ?>
 
             <tr>
               <td data-th="Product">
                 <div class="row">
-		<div class="col-sm-2 hidden-xs"><img src="" alt="..." class="img-responsive"/></div>
+		<div class="col-sm-2 hidden-xs"><img src="<?php echo $output['image'] ?>" alt="..." class="img-responsive"/></div>
                   <div class="col-sm-10">
-                    <h4 class="nomargin"></h4>
+		  <h4 class="nomargin"><?php echo $output['name'] ?></h4>
 			
                     <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
                   </div>
@@ -44,6 +67,11 @@
               </td>
             </tr>
 
+	<?php endforeach; ?>
+
+<?php else: echo "Your cart is empty.";?>
+
+<?php endif; ?>
 
           </tbody>
 
