@@ -1,8 +1,11 @@
 <?php include'header.php'?>
 
+<?php include'../../includes/connect.php'?>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php include'navigation.php'?>
+
 <div class="container-fluid">
   <div class="page-header">
     <h1>Checkout </h1>

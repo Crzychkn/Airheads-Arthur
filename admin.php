@@ -1,5 +1,27 @@
 <?php include'header.php'?>
 
+<?php include'../../includes/connect.php'?>
+
+<?php
+
+$query = "select * from orders order by id asc";
+
+$result = mysqli_query($conn, $query);
+
+while ($row = mysqli_fetch_array($result))
+{
+	$resultArr[] = $row;
+}
+
+foreach ($resultArr as $output)
+{
+	echo $output['customerfirst'];
+}
+
+?>
+
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
