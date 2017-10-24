@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_array($result))
 			<p class="lead">$<?php echo $output['price']?></p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-				<a class="btn btn-success" href="store.php?page=products&action=add&id=<?php echo $output['id'] ?>">Add to cart!</a>
+				<a class="btn btn-success" id="addtocart1" href="store.php?page=products&action=add&id=<?php echo $output['id'] ?>">Add to cart!</a>
                         </div>
                     </div>
                 </div>
