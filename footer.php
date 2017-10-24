@@ -41,6 +41,6 @@ $(document).ready(function() {
     $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 });
 </script>
-
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
