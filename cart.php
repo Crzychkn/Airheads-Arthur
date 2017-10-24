@@ -25,7 +25,6 @@ if(isset($_POST['refresh'])){
 <?php 
 
 if (isset($_GET['action']) && $_GET['action'] == "delete") {
-	echo "test";
 	$id = intval ($_GET['id']);
 
 	if (isset($_SESSION['cart'][$id])) {
