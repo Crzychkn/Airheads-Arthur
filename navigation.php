@@ -8,9 +8,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php">HOME</a></li>
         <li><a href="store.php">STORE</a></li>
-         <li><a href="cart.php"><button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-        </button></a></li>
+         <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
       
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
               Sign In<span class="caret"></span>
