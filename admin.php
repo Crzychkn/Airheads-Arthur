@@ -12,12 +12,6 @@ while ($row = mysqli_fetch_array($result))
 {
 	$resultArr[] = $row;
 }
-
-foreach ($resultArr as $output)
-{
-	echo $output['customerfirst'];
-}
-
 ?>
 
 
@@ -74,37 +68,21 @@ foreach ($resultArr as $output)
                   </tr>
               </thead>   
               <tbody>
+
+<?php foreach ($resultArr as $output): ?>
                 <tr>
-                    <td>Donna R. Folse</td>
-                    <td>9/29/2017</td>
-                    <td>$17.89</td>
-                   <td><span class="label label-warning">Pending</span></td>  
-                    </td>                                       
-                </tr>
-                <tr>
-                    <td>Emily F. Burns</td>
-                    <td>9/27/2017</td>
-                    <td>$55.77</td>
-                  <td><span class="label label-warning">Pending</span></td>                                     
-                </tr>
-                <tr>
-                    <td>Andrew A. Stout</td>
-                    <td>9/23/2017</td>
-                    <td>$96.75</td>
-                    <td><span class="label label-cancelled">Cancelled</span></td>                                        
-                </tr>
-                <tr>
-                    <td>Mary M. Bryan</td>
-                    <td>9/23/2017</td>
-                    <td>$11.98</td>
-                    <td><span class="label label-success">Shipped</span>                                      
-                </tr>
-                <tr>
-                    <td>Mary A. Lewis</td>
-                    <td>9/21/2017</td>
-                    <td>$23.79</td>
-                   <td><span class="label label-success">Shipped</span>                                       
+		<td><?php echo $output['customerfirst']." ", $output['customerlast']?></td>
+		<td><?php echo $output['orderdate']?></td>
+		<td>$<?php echo $output['totalprice']?></td>
+		<?php if($output['status'] == "shipped"): ?>
+		<td><span class="label label-success"><?php echo $output['status']?></span></td>  
+		<?php elseif($output['status'] == "cancelled"): ?>
+		<td><span class="label label-danger"><?php echo $output['status']?></span></td>  
+		<?php else: ?>
+		<td><span class="label label-warning"><?php echo $output['status']?></span></td>  
+		<?php endif; ?>
                 </tr>                                   
+<?php endforeach; ?>
               </tbody>
             </table>
             </div>
