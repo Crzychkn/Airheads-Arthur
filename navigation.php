@@ -6,7 +6,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php">HELLO</a></li>
+        <li><a href="index.php">HOME</a></li>
         <li><a href="store.php">STORE</a></li>
          <li><a href="cart.php">CART</a></li>
       
