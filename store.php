@@ -60,7 +60,7 @@ while ($row = mysqli_fetch_array($result))
 
 <?php foreach ($resultArr as $output) { ?>
 
-        <div class="item  col-xs-4 col-lg-4">
+        <div class="item  col-xs-12 col-md-6 col-lg-4">
             <div class="thumbnail">
 	    <img class="group list-group-image" src="<?php echo $output['image']?>" alt="" />
                 <div class="caption">
@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_array($result))
 			<p class="lead">$<?php echo $output['price']?></p>
                         </div>
                         <div class="col-xs-12 col-md-6">
-				<a class="btn btn-success" href="store.php?page=products&action=add&id=<?php echo $output['id'] ?>">Add to cart</a>
+				<a class="btn btn-success" href="store.php?page=products&action=add&id=<?php echo $output['id'] ?>">Add to cart!</a>
                         </div>
                     </div>
                 </div>
