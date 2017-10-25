@@ -23,7 +23,6 @@ while ($row = mysqli_fetch_array($result))
             <table class="table table-striped table-condensed">
                   <thead>
                   <tr>
-                      <th>Username</th>
                       <th>Customer Name</th>
                       <th>Address</th>
                       <th>Order Date</th>
@@ -35,9 +34,8 @@ while ($row = mysqli_fetch_array($result))
 
 <?php foreach ($resultArr as $output): ?>
                 <tr>
-		<td><?php echo $output['username'] ?></td>
 		<td><?php echo $output['customerfirst']." ", $output['customerlast']?></td>
-		<td><?php echo $output['streetone']." ", $output['streettwo']?></td>
+		<td><?php echo $output['streetone']." ", $output['streettwo']." <br>", $output['city'].", ", $output['state']." ", $output['zip'] ?></td>
 		<td><?php echo date('m/j/Y',strtotime($output['orderdate'])); ?></td>
 		<td>$<?php echo $output['totalprice']?></td>
 		<?php if($output['status'] == "shipped"): ?>
