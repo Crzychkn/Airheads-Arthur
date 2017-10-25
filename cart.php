@@ -107,7 +107,7 @@ if (isset($_GET['action']) && $_GET['action'] == "delete") {
             <tr>
               <td><a href="store.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
               <td colspan="2" class="hidden-xs"></td>
-	      <td class="hidden-xs text-center"><strong>$<?php echo money_format('%i', $totalPrice) ?></strong></td>
+	      <td class="hidden-xs text-center"><strong>Subtotal: $<?php echo money_format('%i', $totalPrice) ?></strong></td>
               <td><a href="checkout.php" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
             </tr>
           </tfoot>

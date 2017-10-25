@@ -16,13 +16,14 @@
               <div class="row">
                
                 <div class="col-xs-9">                      
-                  <form role="form" class="">
+                  <form method="post" action="thanks.php" type="submit" name="submit" role="form" class="">
                     <div class="form-group">
                       <label for="inputname">First Name</label>
-                      <input type="text" class="form-control form-control-large" id="inputname" placeholder="First">
-                    </div><div class="form-group">
+                      <input type="text" name="customerfirst" class="form-control form-control-large" id="inputname" placeholder="First">
+		    </div>
+		    <div class="form-group">
                       <label for="inputname">Last Name</label>
-                      <input type="text" class="form-control form-control-large" id="inputname" placeholder="Last">
+                      <input type="text" name="customerlast" class="form-control form-control-large" id="inputname" placeholder="Last">
                     </div>
                     <div class="form-group">
                       <label for="inputAddress1">Street address 1</label>
@@ -155,7 +156,7 @@
         </div>
       </div>
       <div class="well">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Place Order</button>
+        <button onclick="redirect()" type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Place Order</button>
       </div>
     </div>
   </div>
