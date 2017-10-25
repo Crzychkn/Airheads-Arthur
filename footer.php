@@ -3,7 +3,10 @@
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-  <p>Theme Made By <a href="http://www.uvu.edu" data-toggle="tooltip" title="Visit Using">Airheads Dev Team</a></p> 
+  
+
+  <p>Theme Made By <a href="http://www.uvu.edu" data-toggle="tooltip" title="Visit Using">Airheads Dev Team</a></p>
+  <h6><a href="login.php">ADMIN</a></h6>
 </footer>
 
 <script>
