@@ -14,45 +14,7 @@ while ($row = mysqli_fetch_array($result))
 }
 ?>
 
-
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    
-     <a href="index.php" class="navbar-left"><img src="img/logo.png"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php">HOME</a></li>
-        <li><a href="store.php">STORE</a></li>
-         <li><a href="cart.php">CART</a></li> <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-              Sign In<span class="caret"></span>
-            </a>
-
-                    <div class="dropdown-menu" id="formLogin">
-                        <div class="row">
-                            <div class="container-fluid">
-                                <form class="">
-                                    <div class="form-group">
-                                        <label class="">Username</label>
-                                        <input class="form-control" name="username" id="username" type="text">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="">Password</label>
-                                        <input class="form-control" name="password" id="password" type="password">
-                                        <br class="">
-                                    </div>
-                                     <a href="index.php" type="submit" id="btnLogin" class="btn btn-success btn-sm">Logout</a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>   
-    </div>
-  </div>
-</nav>
+<?php include 'navigation.php'?>
 
 <div class="container">
   <div class="row">
@@ -62,6 +24,8 @@ while ($row = mysqli_fetch_array($result))
                   <thead>
                   <tr>
                       <th>Username</th>
+                      <th>Customer Name</th>
+                      <th>Address</th>
                       <th>Order Date</th>
                       <th>Price</th>
                       <th>Status</th>                                          
@@ -71,7 +35,9 @@ while ($row = mysqli_fetch_array($result))
 
 <?php foreach ($resultArr as $output): ?>
                 <tr>
+		<td><?php echo $output['username'] ?></td>
 		<td><?php echo $output['customerfirst']." ", $output['customerlast']?></td>
+		<td><?php echo $output['streetone']." ", $output['streettwo']?></td>
 		<td><?php echo $output['orderdate']?></td>
 		<td>$<?php echo $output['totalprice']?></td>
 		<?php if($output['status'] == "shipped"): ?>
