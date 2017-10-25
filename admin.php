@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_array($result))
 		<td><?php echo $output['username'] ?></td>
 		<td><?php echo $output['customerfirst']." ", $output['customerlast']?></td>
 		<td><?php echo $output['streetone']." ", $output['streettwo']?></td>
-		<td><?php echo $output['orderdate']?></td>
+		<td><?php echo date('m/j/Y',strtotime($output['orderdate'])); ?></td>
 		<td>$<?php echo $output['totalprice']?></td>
 		<?php if($output['status'] == "shipped"): ?>
 		<td><span class="label label-success"><?php echo $output['status']?></span></td>  
