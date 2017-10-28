@@ -48,17 +48,6 @@
                         </div>
                       </div>
                     </div>
-
-
-
-                    <div class="form-group">
-                      <label for="inputState" class="control-label">State</label>
-                      <select class="form-control form-control-large">
-                        <option>Select state</option>
-                      </select>
-                    </div>
-
-                    
                   </form>
                   
 
