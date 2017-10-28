@@ -10,10 +10,12 @@
 
 <?php
 if(isset($_POST)){ 
-	var_dump($_POST);
 	$customerfirst = $_POST['customerfirst'];
-	var_dump($_POST['customerfirst']);
+	$customerlast = $_POST['customerlast'];
+	$streetone = $_POST['streetone'];
 	echo $customerfirst;
+	echo $customerlast;
+	echo $streetone;
 }
 ?>
 
