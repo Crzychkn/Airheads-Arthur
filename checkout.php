@@ -10,16 +10,17 @@
   <div class="page-header">
     <h1>Checkout </h1>
   </div>
-               
+
+<!-- Start Customer Info form -->
+<form method="post" action="thanks.php" type="submit" name="submit" role="form" class="" id="customerinfo">
         <div class="list-group-item">
           <div class="list-group-item-heading">          
               <div class="row">
                
                 <div class="col-xs-9">                      
-                  <form method="post" action="thanks.php" type="submit" name="submit" role="form" class="">
                     <div class="form-group">
                       <label for="inputname">First Name</label>
-                      <input type="text" name="customerfirst" class="form-control form-control-large" id="inputname" placeholder="First">
+                      <input type="text"  name="customerfirst" class="form-control form-control-large" id="inputname" placeholder="First">
 		    </div>
 		    <div class="form-group">
                       <label for="inputname">Last Name</label>
@@ -27,39 +28,43 @@
                     </div>
                     <div class="form-group">
                       <label for="inputAddress1">Street address 1</label>
-                      <input type="text" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address">
+                      <input type="text" name="streetone" class="form-control form-control-large" id="inputAddress1" placeholder="Enter address">
                     </div>
                     <div class="form-group">
                       <label for="inputAddress2">Street address 2</label>
-                      <input type="text" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address">
+                      <input type="text" name="streettwo" class="form-control form-control-large" id="inputAddress2" placeholder="Enter address">
                     </div>
                     <div class="row">
                       <div class="col-xs-3">
                         <div class="form-group">
                           <label for="inputZip">ZIP Code</label>
-                          <input type="text" class="form-control form-control-small" id="inputZip" placeholder="Enter zip">
+                          <input type="text" name="zip" class="form-control form-control-small" id="inputZip" placeholder="Enter zip">
                         </div>
                       </div>
                       <div class="col-xs-9">
                         <div class="form-group">
                           <label for="inputCity">City</label>
-                          <input type="text" class="form-control" id="inputCity" placeholder="Enter city">
+                          <input type="text" name="city" class="form-control" id="inputCity" placeholder="Enter city">
                         </div>
                       </div>
                     </div>
+
+
                     <div class="form-group">
                       <label for="inputState" class="control-label">State</label>
                       <select class="form-control form-control-large">
                         <option>Select state</option>
                       </select>
                     </div>
-                  </form>
-                  <button class="btn btn-sm">Save Address</button>
                 </div>
               </div>
           </div>
         </div>
       </div>
+</form>
+<!-- End Customer Info Form -->
+
+<!-- Gift Message -->
       <form role="form">
           <div class="checkbox">
             <label data-toggle="collapse" data-target="#gift">
@@ -72,6 +77,8 @@
             <p class="help-block">256 characters left</p>
           </div>
       </form>
+
+
       <h3>I'll pay with&hellip;</h3>
       <div class="list-group">
         <div class="list-group-item">
@@ -156,7 +163,7 @@
         </div>
       </div>
       <div class="well">
-        <button onclick="redirect()" type="submit" name="submit" class="btn btn-primary btn-lg btn-block">Place Order</button>
+        <button onclick="redirect()" type="submit" form="customerinfo"  class="btn btn-primary btn-lg btn-block">Place Order</button>
       </div>
     </div>
   </div>
