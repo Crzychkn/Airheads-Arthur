@@ -6,7 +6,7 @@
 
 <?php include'navigation.php'?>
 
-<<div class="container">
+<div class="container">
   <div class="page-header">
     <h1>Checkout </h1>
   </div>
