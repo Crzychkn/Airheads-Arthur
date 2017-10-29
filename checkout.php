@@ -84,7 +84,7 @@
                   
                       <dl class="dl-small">
                         <dt>Credit Card Number</dt>
-                        <dd><input type="number" name="cc" class="form-control form-control-small" id="inputCard" min="16" max="16" ></dd>
+                        <dd><input type="textbox" name="cc" class="form-control form-control-small" id="CreditCardNumber" required="true"></dd>
                       </dl>
 				  </div>
                     <div class="col-xs-3">

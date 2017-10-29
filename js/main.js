@@ -11,3 +11,17 @@ $(document).ready(function(){
 function redirect(){
 	window.location.href = "thanks.php";
 }
+$(
+    
+ function validate_creditcardnumber()
+{
+var re16digit=/^\d{16}$/
+
+    
+if (CreditCardNumber.value.search(re16digit)==-1)
+return false;
+
+
+}
+
+);
