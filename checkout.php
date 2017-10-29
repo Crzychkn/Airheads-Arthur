@@ -75,13 +75,10 @@
                   </label>
                 </div>
                 <div class="col-xs-5">
-                  <div class="row"> 
-						
-						
-					</div>
+                  
                       <dl class="dl-small">
                         <dt>Credit Card Number</dt>
-                        <dd><input type="number" class="form-control form-control-small" id="inputCard" min="1" maxlenth="16" ></dd>
+                        <dd><input type="number" name="cc" class="form-control form-control-small" id="inputCard" min="16" max="16" ></dd>
                       </dl>
 				  </div>
                     <div class="col-xs-3">
@@ -125,14 +122,21 @@
   						</select>
                       </dl>
                     </div>
+				  
                     
                   
                   </div>
                 </div>
               </div>
           </div>
-        </div>
-        
+	<h3 class="label1">Total Price</h3>
+		<div class="list-group">
+        <div class="list-group-item">
+          <div class="list-group-item-heading"> 
+			  <span><?php echo $totalPrice += ($totalPrice * .047); ?></span>
+       </div>
+			</div>
+	</div>
         
       <div class="well">
 
@@ -140,6 +144,8 @@
 
 
       </div>
+
+
     </div>
   </div>
 </div>
