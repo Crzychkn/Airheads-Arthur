@@ -47,6 +47,12 @@
                           <input type="text" name="city" class="form-control" id="inputCity" placeholder="Enter city">
                         </div>
                       </div>
+<div class="col-xs-3">
+                        <div class="form-group">
+                          <label for="inputCity">State</label>
+                          <input type="text" name="state" class="form-control" id="inputCity" placeholder="Enter state">
+                        </div>
+
                     </div>
                   </form>
                   
@@ -122,9 +128,6 @@
   						</select>
                       </dl>
                     </div>
-				  
-                    
-                  
                   </div>
                 </div>
               </div>
@@ -133,19 +136,15 @@
 		<div class="list-group">
         <div class="list-group-item">
           <div class="list-group-item-heading"> 
-			  <span><?php echo $totalPrice += ($totalPrice * .047); ?></span>
+		<?php $totalPrice = $_SESSION['totalprice']; ?>
+		<span>$<?php echo money_format('%i', $totalPrice += ($totalPrice * .047)); ?></span>
+		<?php $_SESSION['totalprice'] = $totalPrice; ?>
        </div>
-			</div>
 	</div>
-        
+	</div>
       <div class="well">
-
         <button onclick="redirect()" type="submit" form="customerinfo"  class="btn btn-primary btn-lg btn-block">Place Order</button>
-
-
       </div>
-
-
     </div>
   </div>
 </div>
