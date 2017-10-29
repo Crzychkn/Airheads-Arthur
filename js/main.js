@@ -9,28 +9,17 @@ $(document).ready(function(){
 */
 
 function redirect(){
-	var re16digit=/^\d{16}$/;
 
-	if(CreditCardNumber.value.search(re16digit)==-1){
-	window.location.href = "thanks.php";
- else{
-	 input.value="";
-	alert("Please enter your 16 digit credit card number");
+	ccNumber = document.getElementById("CreditCardNumber").value;
+        ccNumber = ccNumber.replace(/ /g, "");
+	document.getElementById("CreditCardNumber").value = ccNumber;
+
+	if (ccNumber.length != 16 || ccNumber == "" || ccNumber == null)
+	{
+		document.getElementById("CreditCardNumber").value="";
+		alert("Please enter your 16 digit credit card number");
+	}
+       	else{
+		window.location.href = "thanks.php";
+	}
 }
-
-
-}
-}
-//$(
-    
- //function validate_creditcardnumber()
-//{
-
-    
-//if (CreditCardNumber.value.search(re16digit)==-1)
-//return false;
-
-
-//}
-
-//);
