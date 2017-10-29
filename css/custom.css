@@ -197,4 +197,18 @@
     margin: 0 0 11px;
 }
 
+ button#edit{
+	padding: 10px 15px;
+	 width:25%;
+	 color:white;
+}
+button#placeorder{
+	width:35%;
+}
+button#edit a{
+	color:white;
+}
+button#edit a:hover{
+	color:black;
+}
 

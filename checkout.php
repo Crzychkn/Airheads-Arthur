@@ -143,7 +143,14 @@
 	</div>
 	</div>
       <div class="well">
-        <button onclick="redirect()" type="submit" form="customerinfo"  class="btn btn-primary btn-lg btn-block">Place Order</button>
+		  <div class="row">
+			  <div class="col-md-6">
+				  <button class="btn btn-primary btn-lg btn-block" id="edit"> <a href="cart.php">Edit Cart</a></button>
+			  </div>
+			  <div class-"col-md-6">
+        <button onclick="redirect()" type="submit" form="customerinfo"  class="btn btn-primary btn-lg btn-block" id="placeorder">Place Order</button>
+			  </div>
+		  </div>
       </div>
     </div>
   </div>
