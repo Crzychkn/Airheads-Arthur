@@ -113,7 +113,8 @@ if (isset($_GET['action']) && $_GET['action'] == "delete") {
             </tr>
           </tfoot>
         </table>
-</div>
+
 </form>
+	</div>
 <?php include'footer.php'?>
 
