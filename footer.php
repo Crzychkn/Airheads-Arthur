@@ -3,9 +3,7 @@
   <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-  
 
- 
   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal"><a class="group inner list-group-item-heading">LOGIN</a></button>
 
                 <!-- Modal -->
@@ -25,7 +23,7 @@
        <div class="formLogin" id="formLogin">
                         <div class="row">
                             <div class="container-fluid">
-                                <form>
+                                <form method="post" action="admin.php" id="login">
                                     <div class="form-group">
                                         <label class="">Username</label>
                                         <input class="form-control" name="username" id="username" type="text">
@@ -35,14 +33,14 @@
                                         <input class="form-control" name="password" id="password" type="password">
                                         <br class="">
                                     </div>
-              
+             	 
                                 </form>
                             </div>
                         </div>
                     </div>
                
       <div class="modal-footer">
-        <a class="btn btn-default" href="admin.php">LOGIN</a>
+        <button form="login" type="submit" class="btn btn-default" >LOGIN</a>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
