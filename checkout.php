@@ -130,7 +130,16 @@
         <div class="list-group-item">
           <div class="list-group-item-heading"> 
     <?php $totalPrice = $_SESSION['totalprice']; ?>
-    <span>$<?php echo money_format('%i', $totalPrice += ($totalPrice * .047)); ?></span>
+    <span>
+	<?php echo "Tax (4.7%): " ?>$     
+	<?php echo money_format('%i', $totalPrice * .047); ?><br>
+	<?php echo "Order Subtotal: " ?>$
+	<?php echo money_format('%i', $totalPrice);?><br>
+	<?php echo "Shipping: FREE " ?><br>
+	<?php echo "Grand Total: " ?>$
+	<?php echo money_format('%i', $totalPrice += ($totalPrice * .047)); ?>
+
+	</span>
     <?php $_SESSION['totalprice'] = $totalPrice; ?>
        </div>
   </div>
