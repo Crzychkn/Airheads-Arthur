@@ -37,6 +37,7 @@ if(isset($_POST)){
 
 <div class="container">
 	<h2>Thanks for your order!</h2>
+	<p>You will receive an email confirmation shortly.</p>
 </div>
 
 <?php include'footer.php'?>
