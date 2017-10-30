@@ -1,8 +1,19 @@
 <?php include'header.php'?>
 
 <?php include'../../includes/connect.php'?>
+<?php include'../../includes/credentials.php'?>
 
 <?php
+if ($_POST['username'] != $username && $_POST['password'] != $password){ 
+	$_SESSION['loggedOn'] = false;
+    header("Location:index.php");
+    die();
+}
+?>
+
+<?php
+
+$_SESSION['loggedOn'] = true;
 
 $query = "select * from orders order by id asc";
 
