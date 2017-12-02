@@ -1,3 +1,4 @@
+<?php include'../../includes/connect-arthur.php'?>
 <?php 
 //Start the session! START IT!
 

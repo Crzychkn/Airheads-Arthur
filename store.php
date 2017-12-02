@@ -1,5 +1,4 @@
 <?php include'header.php'?>
-<?php include'../../includes/connect.php'?>
 <?php 
   
     if(isset($_GET['action']) && $_GET['action']=="add"){ 

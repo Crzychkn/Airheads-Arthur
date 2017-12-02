@@ -1,6 +1,5 @@
 <?php include'header.php'?>
 
-<?php include'../../includes/connect.php'?>
 <?php include'../../includes/credentials.php'?>
 
 <?php
