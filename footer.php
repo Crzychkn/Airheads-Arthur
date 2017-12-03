@@ -4,8 +4,8 @@
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
 
-  <button type="button" class="btn btn-success"><a href="login.php" class="group inner list-group-item-heading">LOGIN</a></button>
-  <button type="button" class="btn btn-success"><a href="register.php" class="group inner list-group-item-heading">REGISTER</a></button>
+  <a href="login.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">LOGIN</button></a>
+  <a href="register.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">REGISTER</button></a>
 
 </footer>
 
