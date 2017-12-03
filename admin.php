@@ -74,7 +74,9 @@ while ($row = mysqli_fetch_array($result))
             </table>
             </div>
   </div>
+<?php if($_SESSION['username'] == "admin"): ?>
   <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">SHIP</button></a>
+<?php endif; ?>
   <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">CANCEL</button></a>
 </div>
 
