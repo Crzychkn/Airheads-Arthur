@@ -47,6 +47,7 @@ while ($row = mysqli_fetch_array($result))
                       <th>Order Date</th>
                       <th>Price</th>
                       <th>Status</th>                                          
+                      <th>Selected</th>                                          
                   </tr>
               </thead>   
               <tbody>
@@ -59,10 +60,13 @@ while ($row = mysqli_fetch_array($result))
 		<td>$<?php echo $output['totalprice']?></td>
 		<?php if($output['status'] == "shipped"): ?>
 		<td><span class="label label-success"><?php echo $output['status']?></span></td>  
+		<td></td>
 		<?php elseif($output['status'] == "cancelled"): ?>
 		<td><span class="label label-danger"><?php echo $output['status']?></span></td>  
+		<td></td>
 		<?php else: ?>
 		<td><span class="label label-warning"><?php echo $output['status']?></span></td>  
+		<td><input type="checkbox" value="<?php echo $output['id'] ?>" name="todelete[]" /></td>
 		<?php endif; ?>
                 </tr>                                   
 <?php endforeach; ?>
@@ -70,6 +74,8 @@ while ($row = mysqli_fetch_array($result))
             </table>
             </div>
   </div>
+  <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">SHIP</button></a>
+  <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">CANCEL</button></a>
 </div>
 
 <?php include'footer.php'?>

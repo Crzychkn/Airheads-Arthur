@@ -14,8 +14,8 @@ if(isset($_POST)){
 	{
 		
 	//Prepare statement
-	$stmt = $conn->prepare("insert into orders (username, customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$stmt->bind_param("sssssissds", $username, $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status);
+	$stmt = $conn->prepare("insert into orders (username, customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status, email) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$stmt->bind_param("sssssissdss", $username, $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status, $email);
 	$username = $_SESSION['username'];
 	$customerfirst = $_POST['customerfirst'];
 	$customerlast = $_POST['customerlast'];
@@ -26,6 +26,7 @@ if(isset($_POST)){
 	$state = $_POST['state'];
 	$totalprice = $_SESSION['totalprice'];
 	$status = "pending";	
+	$email = $_POST['email'];
 
 
 	$stmt->execute();
@@ -38,8 +39,8 @@ if(isset($_POST)){
 	{
 
 	//Prepare statement
-	$stmt = $conn->prepare("insert into orders (customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-	$stmt->bind_param("ssssissds", $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status);
+	$stmt = $conn->prepare("insert into orders (customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status, email) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$stmt->bind_param("ssssissdss", $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status, $email);
 	$customerfirst = $_POST['customerfirst'];
 	$customerlast = $_POST['customerlast'];
 	$streetone = $_POST['streetone'];
@@ -49,6 +50,7 @@ if(isset($_POST)){
 	$state = $_POST['state'];
 	$totalprice = $_SESSION['totalprice'];
 	$status = "pending";	
+	$email = $_POST['email'];
 
 
 	$stmt->execute();
