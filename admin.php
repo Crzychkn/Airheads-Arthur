@@ -3,16 +3,16 @@
 <?php include'../../includes/credentials.php'?>
 
 <?php
-if ($_POST['username'] != $username && $_POST['password'] != $password){ 
-	$_SESSION['loggedOn'] = false;
-    header("Location:index.php");
-    die();
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
 }
+
 ?>
 
 <?php
 
-$_SESSION['loggedOn'] = true;
 
 $query = "select * from orders order by id asc";
 
