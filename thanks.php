@@ -10,6 +10,33 @@
 <?php
 if(isset($_POST)){ 
 
+	if (isset($_SESSION['username']))
+	{
+		
+	//Prepare statement
+	$stmt = $conn->prepare("insert into orders (username, customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$stmt->bind_param("sssssissds", $username, $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status);
+	$username = $_SESSION['username'];
+	$customerfirst = $_POST['customerfirst'];
+	$customerlast = $_POST['customerlast'];
+	$streetone = $_POST['streetone'];
+	$streettwo = $_POST['streettwo'];
+	$zip = $_POST['zip'];
+	$city = $_POST['city'];
+	$state = $_POST['state'];
+	$totalprice = $_SESSION['totalprice'];
+	$status = "pending";	
+
+
+	$stmt->execute();
+	$stmt->close();
+	$conn->close();
+	
+	unset($_SESSION['cart']);
+	}
+	else
+	{
+
 	//Prepare statement
 	$stmt = $conn->prepare("insert into orders (customerfirst, customerlast, streetone, streettwo, zip, city, state, totalprice, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	$stmt->bind_param("ssssissds", $customerfirst, $customerlast, $streetone, $streettwo, $zip, $city, $state, $totalprice, $status);
@@ -29,6 +56,7 @@ if(isset($_POST)){
 	$conn->close();
 	
 	unset($_SESSION['cart']);
+	}
 }
 ?>
 

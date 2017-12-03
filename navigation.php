@@ -13,6 +13,9 @@
         <li><a href="index.php">HOME</a></li>
         <li><a href="store.php">STORE</a></li>
          <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
+<?php if(isset($_SESSION['username'])): ?>
+<li><a href="admin.php">ORDERS</a></li>
+<?php endif; ?>
                                         <br class="">
                                 </form>
                             </div>

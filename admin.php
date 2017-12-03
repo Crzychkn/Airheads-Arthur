@@ -1,6 +1,5 @@
 <?php include'header.php'?>
 
-<?php include'../../includes/credentials.php'?>
 
 <?php
 // If session variable is not set it will redirect to login page
@@ -14,10 +13,20 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 <?php
 
 
+if($_SESSION['username'] == "admin")
+{
+
 $query = "select * from orders order by id asc";
 
 $result = mysqli_query($conn, $query);
 
+}
+
+else {
+	$username = $_SESSION['username'];
+	$query = "select * from orders where username='".$_SESSION['username']."'";
+	$result = mysqli_query($conn, $query);
+}
 while ($row = mysqli_fetch_array($result))
 {
 	$resultArr[] = $row;

@@ -4,8 +4,17 @@
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
 
+<?php if(isset($_SESSION['username'])): ?>
+
+  <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">LOGOUT</button></a>
+
+<?php else: ?>
+
   <a href="login.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">LOGIN</button></a>
   <a href="register.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">REGISTER</button></a>
+
+<?php endif; ?>
+
 
 </footer>
 
