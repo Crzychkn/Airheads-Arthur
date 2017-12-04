@@ -17,10 +17,10 @@
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "arthur.schoenfeld@gmai.com, $email";
+        $recipient = "arthur.schoenfeld@gmail.com, $email";
 
         // Set the email subject.
-        $subject = "Thank you for your order! :)";
+        $subject = "Thank you for your order!";
 
         // Build the email content.
         $email_content = "Name: $customerfirst\n";

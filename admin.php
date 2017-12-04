@@ -12,6 +12,63 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 <?php
 
+if(isset($_POST['cancel']) || isset($_POST['ship']))
+{
+
+if (isset($_POST['cancel']))
+{
+	$status = "cancelled";
+}
+else if (isset($_POST['ship']))
+{
+	$status = "shipped";
+}
+
+$id = $_POST['todelete'];
+
+foreach ($id as $delete)
+{
+	$query = "update orders set status='$status' where id='$delete'";
+	mysqli_query($conn, $query);
+	$query = "select * from orders where id=$delete";
+	$result = mysqli_query($conn, $query);
+	$row = mysqli_fetch_array($result);
+
+        // Set the recipient email address.
+        $recipient = "arthur.schoenfeld@gmail.com, $email";
+
+        // Set the email subject.
+        $subject = "Your order of Airheads has been $status";
+
+        // Build the email content.
+        $email_content = "Name: ".$row['customerfirst']." ".$row['customerlast']."\n";
+        $email_content .= "Email: ".$row['email']."\n\n";
+        $email_content .= "Total: \n$".$row['totalprice']."\n";
+	echo $email_content;
+
+        // Build the email headers.
+        $email_headers = "From: ".$row['customerfirst']." <".$row['email'].">";
+
+        // Send the email.
+        if (mail($recipient, $subject, $email_content, $email_headers)) {
+            // Set a 200 (okay) response code.
+            http_response_code(200);
+        } else {
+            // Set a 500 (internal server error) response code.
+            http_response_code(500);
+        }
+
+
+
+}
+
+
+}
+
+?>
+
+<?php
+
 
 if($_SESSION['username'] == "admin")
 {
@@ -36,6 +93,7 @@ while ($row = mysqli_fetch_array($result))
 <?php include 'navigation.php'?>
 
 <div class="container">
+<form action="admin.php" method="post">
   <div class="row">
     <div class="span5">
     <h3>ORDERS</h3>
@@ -75,9 +133,10 @@ while ($row = mysqli_fetch_array($result))
             </div>
   </div>
 <?php if($_SESSION['username'] == "admin"): ?>
-  <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">SHIP</button></a>
+  <button type="submit" name="ship" class="btn btn-success">SHIP</button>
 <?php endif; ?>
-  <a href="logout.php" class="group inner list-group-item-heading"><button type="button" class="btn btn-success">CANCEL</button></a>
+  <button type="submit" name="cancel" class="btn btn-success">CANCEL</button>
+</form>
 </div>
 
 <?php include'footer.php'?>
